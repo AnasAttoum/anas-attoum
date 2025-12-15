@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  --primary: #a886e4;
+  --secondary: #d1bff1;
+
+  --gray: #939393;
+
+  --background: #eee;
+  --foreground: #111;
+}
+
+[data-theme="dark"] {
+  --background: #111;
+  --foreground: #eee;
+}
+
+* {
+  scroll-behavior: smooth;
+  transition: all 0.5s;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-gray: var(--gray);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  user-select: none;
+}
+
+.x-spacing {
+  @apply px-5 sm:px-16 md:px-24 lg:px-32;
+}
+.simpleBtn {
+  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800;
+}
+
+/* Scrollbar */
+body {
+  --sb-thumb-color: var(--primary);
+  --sb-track-color: #232e33bc;
+  --sb-size: 14px;
+}
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  /* border-radius: 3px; */
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  /* border-radius: 3px; */
+}
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
