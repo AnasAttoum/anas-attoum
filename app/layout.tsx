@@ -31,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all caret-red-300 dark:caret-amber-400 duration-300`}
       >
         <ThemeProvider
+          attribute="data-theme"
           defaultTheme="system"
           enableSystem
         >
