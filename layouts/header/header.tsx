@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex justify-between items-center h-20 shadow dark:shadow-black x-spacing">
+      <div className="flex justify-between items-center h-20 shadow dark:shadow-black x-spacing backdrop-blur-sm">
         <Logo />
 
         {/* navItems on Desktop */}
@@ -31,7 +31,7 @@ export default function Header() {
 
       {/* navItems on Mobile */}
       <ul className={clsx(
-        "absolute top-20 left-0 flex flex-col justify-center text-center text-2xl text-white font-bold gap-7 md:hidden w-full h-0 bg-gray ease-out opacity-0 x-spacing",
+        "absolute top-20 left-0 flex flex-col justify-center text-center text-2xl text-white font-bold gap-7 md:hidden w-full h-0 bg-gray ease-out opacity-0 x-spacing overflow-hidden",
         checked && "h-[calc(100dvh-80px)] opacity-100"
       )}
       >

@@ -3,16 +3,17 @@
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
+  const isDark = theme === "dark" || (theme === "system" && systemTheme === "dark")
 
   return (
     <button
       onClick={() =>
-        setTheme(theme === "dark" ? "light" : "dark")
+        setTheme(isDark ? "light" : "dark")
       }
       className="simpleBtn"
     >
-      {theme === "dark" ? "🔆" : "🌙"}
+      {isDark ? "🔆" : "🌙"}
     </button>
   );
 }

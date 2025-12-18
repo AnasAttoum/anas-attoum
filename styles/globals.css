@@ -33,34 +33,17 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   user-select: none;
+  overflow-x: hidden;
 }
 
 .x-spacing {
-  @apply px-5 sm:px-16 md:px-24 lg:px-32;
-}
-.simpleBtn {
-  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800;
+  @apply px-5 sm:px-16 md:px-24 lg:px-32 overflow-x-hidden;
 }
 
-/* Scrollbar */
-body {
-  --sb-thumb-color: var(--primary);
-  --sb-track-color: #232e33bc;
-  --sb-size: 14px;
+.h1 {
+  @apply text-3xl lg:text-4xl xl:text-6xl;
 }
-body::-webkit-scrollbar {
-  width: var(--sb-size);
-}
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  /* border-radius: 3px; */
-}
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  /* border-radius: 3px; */
-}
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
+
+.h2 {
+  @apply text-2xl lg:text-2xl xl:text-4xl;
 }
