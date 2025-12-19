@@ -2,7 +2,7 @@ import Photo from "@/components/photo/photo";
 
 export default function Intro() {
     return (
-        <div className="grid grid-cols-3 gap-5 h-dvh">
+        <section className="grid grid-cols-3 gap-5 h-dvh relative max-lg:top-30">
 
             {/* Left */}
             <div className="col-span-3 lg:col-span-2 flex flex-col justify-center gap-12">
@@ -25,6 +25,6 @@ export default function Intro() {
                 <Photo src="/images/anas-attoum-1.jpg"/>
                 <div className="animated-box"/>
             </div>
-        </div>
+        </section>
     )
 }

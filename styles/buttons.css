@@ -6,7 +6,7 @@
 
 /* --------------------------------- primaryBtn --------------------------------- */
 .primaryBtn {
-  @apply py-5 px-15;
+  @apply py-3 px-10;
   text-decoration: none;
   display: inline-block;
   width: fit-content;

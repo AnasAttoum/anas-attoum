@@ -36,6 +36,10 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  min-height: 550px;
+}
+
 .x-spacing {
   @apply px-5 sm:px-16 md:px-24 lg:px-32 overflow-x-hidden;
 }
