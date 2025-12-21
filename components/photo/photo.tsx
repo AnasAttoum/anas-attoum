@@ -12,7 +12,7 @@ export default function Photo({ src }: Props) {
                 alt="Anas Attoum’s picture"
                 width={330}
                 height={330}
-                className="rounded-3xl border-8 border-secondary"
+                className="rounded-3xl border-8 border-secondary hover:scale-105 hover:rotate-3"
             />
             <span className="second-border" />
         </div>

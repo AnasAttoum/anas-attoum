@@ -2,13 +2,14 @@ import clsx from 'clsx';
 import styles from './hamb.module.css';
 import { Dispatch, SetStateAction } from 'react';
 
-export default function Hamb({ setChecked }: { setChecked: Dispatch<SetStateAction<boolean>> }) {
+export default function Hamb({ checked, setChecked }: { setChecked: Dispatch<SetStateAction<boolean>>; checked: boolean }) {
     return (
         <>
             <input
                 type="checkbox"
                 id="hamb"
                 className={styles.checkbox}
+                checked={checked}
                 onChange={(e) => setChecked(e.target.checked)}
             />
             <label htmlFor="hamb" className={clsx(styles.toggle, "simpleBtn md:hidden!")}>

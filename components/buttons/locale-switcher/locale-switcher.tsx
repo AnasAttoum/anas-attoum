@@ -18,7 +18,6 @@ export default function LocaleSwitcher() {
   const pathname = usePathname();
 
   const switchLocale = (locale: localesType) => {
-    console.log(locale)
     startTransition(() => {
       router.replace(
         {pathname},

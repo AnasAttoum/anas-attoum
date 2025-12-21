@@ -4,6 +4,7 @@
 :root {
   --primary: #a886e4;
   --secondary: #d1bff1;
+  --light: #F2E2FF;
 
   --gray: #939393;
 
@@ -24,6 +25,7 @@
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-light: var(--light);
   --color-gray: var(--gray);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -33,11 +35,11 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   user-select: none;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 section {
-  min-height: 550px;
+  min-height: 100dvh;
 }
 
 .x-spacing {

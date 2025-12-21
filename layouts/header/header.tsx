@@ -45,6 +45,28 @@ export default function Header() {
     };
   }, [lastScrollY]);
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && checked) { // md breakpoint or lg, depending on your Tailwind config
+        setChecked(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [checked]);
+  useEffect(() => {
+    if (checked) {
+      document.body.style.overflow = "hidden";   // disable scroll
+    } else {
+      document.body.style.overflow = "";         // enable scroll
+    }
+
+    return () => {
+      document.body.style.overflow = "";         // cleanup
+    };
+  }, [checked]);
+
   return (
     <header
       className={clsx(
@@ -93,7 +115,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <LocaleSwitcher />
-          <Hamb setChecked={setChecked} />
+          <Hamb checked={checked} setChecked={setChecked} />
         </div>
       </div>
 
