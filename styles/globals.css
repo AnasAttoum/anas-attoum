@@ -4,7 +4,7 @@
 :root {
   --primary: #a886e4;
   --secondary: #d1bff1;
-  --light: #F2E2FF;
+  --light: #f2e2ff;
 
   --gray: #939393;
 
@@ -27,8 +27,7 @@
   --color-secondary: var(--secondary);
   --color-light: var(--light);
   --color-gray: var(--gray);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-raleway: var(--font-raleway);
 }
 
 body {
@@ -36,10 +35,11 @@ body {
   color: var(--foreground);
   user-select: none;
   box-sizing: border-box;
+  font-family: Raleway;
 }
 
 section {
-  min-height: 100dvh;
+  @apply my-44;
 }
 
 .x-spacing {
@@ -47,9 +47,14 @@ section {
 }
 
 .h1 {
-  @apply text-3xl lg:text-4xl xl:text-6xl;
+  @apply text-3xl lg:text-4xl xl:text-6xl font-medium;
 }
-
 .h2 {
+  @apply text-2xl lg:text-3xl xl:text-5xl;
+}
+.h3 {
   @apply text-2xl lg:text-2xl xl:text-4xl;
+}
+.h4 {
+  @apply text-lg lg:text-lg xl:text-2xl;
 }

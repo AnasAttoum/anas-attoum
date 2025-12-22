@@ -8,7 +8,7 @@ export default function Intro() {
     const t = useTranslations();
 
     return (
-        <section className="grid grid-cols-3 gap-5 relative max-lg:mt-32">
+        <section className="grid grid-cols-3 gap-5 relative">
 
             {/* Left */}
             <div className="col-span-3 lg:col-span-2 flex flex-col justify-center gap-12">
@@ -21,7 +21,7 @@ export default function Intro() {
                 </ToAnimation>
 
                 <ToAnimation to="top" position={1}>
-                    <div className="h2 w-fit">
+                    <div className="h3 w-fit">
                         {t("letsWorkTogether")} <span className="inline-block h-3 w-3 bg-primary rounded-full" />
                         <div className="h-1 w-[50%] bg-primary mt-3" />
                     </div>
