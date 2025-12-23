@@ -4,14 +4,16 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
+import clsx, { type ClassValue } from "clsx";
 
 type Props = {
     title: string;
+    className?: ClassValue;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function LetterAnimation({ title }: Props) {
+export default function LetterAnimation({ title, className }: Props) {
     const ref = useRef(null);
     const t = useTranslations();
 
@@ -46,5 +48,8 @@ export default function LetterAnimation({ title }: Props) {
         return () => ctx.revert();
     }, []);
 
-    return <div ref={ref} className="h2 font-medium opacity-0">{t(title)}</div>;
+    return <div ref={ref} className={clsx(
+        "h2 font-medium my-16 opacity-0",
+        className
+    )}>{t(title)}</div>;
 }

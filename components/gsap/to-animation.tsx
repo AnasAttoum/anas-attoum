@@ -28,6 +28,7 @@ export default function ToAnimation({ children, position = .5, to = "right" }: P
             : to === "top"
                 ? 100
                 : 0;
+        const fromScale = to === "none" ? .7 : 1;
 
         gsap.set(ref.current, { transition: "none" });
 
@@ -44,10 +45,11 @@ export default function ToAnimation({ children, position = .5, to = "right" }: P
 
             tl.fromTo(
                 ref.current,
-                { x: fromX, y: fromY, opacity: 0, immediateRender: false },
+                { x: fromX, y: fromY, opacity: 0, scale: fromScale, immediateRender: false },
                 {
                     x: 0,
                     y: 0,
+                    scale: 1,
                     opacity: 1,
                     duration: 0.6,
                     ease: "none",
