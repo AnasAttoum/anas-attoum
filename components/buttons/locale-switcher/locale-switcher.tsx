@@ -17,11 +17,12 @@ export default function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLocale = (locale: localesType) => {
+  const switchLocale = (loc: localesType) => {
+    if (loc === locale) return;
     startTransition(() => {
       router.replace(
-        {pathname},
-        {locale}
+        { pathname },
+        { locale: loc }
       );
     });
   }

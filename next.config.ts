@@ -4,7 +4,8 @@ import createNextIntlPlugin from "next-intl/plugin";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      new URL(`${process.env.SKILLS_IMAGES_HOST!}**`)
+      new URL(`${process.env.SKILLS_IMAGES_HOST!}**`),
+      new URL(`${process.env.PROJECTS_IMAGES_HOST!}**`),
     ],
   },
 };

@@ -13,22 +13,22 @@ export default function Intro() {
             {/* Left */}
             <div className="col-span-3 lg:col-span-2 flex flex-col justify-center gap-12">
                 <ToAnimation>
-                    <div className="h1">
+                    <h1 className="h1">
                         {t("hi")} <span className="text-primary font-semibold">Anas Attoum</span>
                         <br />
-                        {t("frontEndDev")}
-                    </div>
+                        {t("front-end-dev")}
+                    </h1>
                 </ToAnimation>
 
                 <ToAnimation to="top" position={1}>
-                    <div className="h3 w-fit">
-                        {t("letsWorkTogether")} <span className="inline-block h-3 w-3 bg-primary rounded-full" />
+                    <h3 className="h3 w-fit">
+                        {t("lets-work-together")} <span className="inline-block h-3 w-3 bg-primary rounded-full" />
                         <div className="h-1 w-[50%] bg-primary mt-3" />
-                    </div>
+                    </h3>
                 </ToAnimation>
 
                 <ToAnimation to="left" position={1.5}>
-                    <a href="https://drive.google.com/file/d/1B4xQ9jc5EQa4NA9YpPLpz-vFqYE62ivw/preview" target="_blank" rel="noreferrer" className="primaryBtn">{t("showCV")}</a>
+                    <a href="https://drive.google.com/file/d/1B4xQ9jc5EQa4NA9YpPLpz-vFqYE62ivw/preview" target="_blank" rel="noreferrer" className="primaryBtn">{t("show-cv")}</a>
                 </ToAnimation>
             </div>
 

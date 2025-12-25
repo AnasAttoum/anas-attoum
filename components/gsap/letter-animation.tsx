@@ -49,7 +49,7 @@ export default function LetterAnimation({ title, className }: Props) {
     }, []);
 
     return <div ref={ref} className={clsx(
-        "h2 font-medium my-16 opacity-0",
+        "h2 font-medium my-16 opacity-0 text-center",
         className
     )}>{t(title)}</div>;
 }

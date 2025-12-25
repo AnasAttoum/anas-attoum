@@ -1,4 +1,3 @@
-import { SkillFindManyArgs } from "@/app/generated/prisma/models";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 
@@ -20,7 +19,7 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export default prisma;
 
-export const prismaConfig: SkillFindManyArgs = {
+export const prismaConfig = {
   where: { enabled: true },
   orderBy: { order: "desc" },
 };

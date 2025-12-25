@@ -3,16 +3,19 @@
 import { ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ClassValue } from "clsx";
+import clsx from "clsx";
 
 type Props = {
     children: ReactNode;
     position?: number;
     to?: "right" | "left" | "top" | "bottom" | "none";
+    className?: ClassValue;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ToAnimation({ children, position = .5, to = "right" }: Props) {
+export default function ToAnimation({ children, position = .5, to = "right", className }: Props) {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -60,5 +63,5 @@ export default function ToAnimation({ children, position = .5, to = "right" }: P
         return () => ctx.revert();
     }, [position, to]);
 
-    return <div ref={ref} className="opacity-0">{children}</div>;
+    return <div ref={ref} className={clsx("opacity-0", className)}>{children}</div>;
 }
