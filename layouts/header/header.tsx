@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 
 import dynamic from 'next/dynamic';
 import LocaleSwitcher from "@/components/buttons/locale-switcher/locale-switcher";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/lib/localization/navigation";
 
 // Disable SSR for this component
 const ThemeToggle = dynamic(() => import('@/components/buttons/theme-toggle/theme-toggle'), {
@@ -17,6 +19,8 @@ const ThemeToggle = dynamic(() => import('@/components/buttons/theme-toggle/them
 });
 
 export default function Header() {
+  const t = useTranslations();
+
   const [checked, setChecked] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -95,7 +99,7 @@ export default function Header() {
               )}
               style={{ transitionDelay: `${0.3 * i}s` }}
             >
-              <ItemOnMobile label={label} href={href} />
+              <ItemOnMobile label={t(label)} href={href} />
             </div>
           )
         })}
@@ -107,7 +111,7 @@ export default function Header() {
         {/* navItems on Desktop */}
         <ul className="gap-5 hidden md:flex">
           {navItems.map(({ label, href }) =>
-            <Item key={label} label={label} href={href} />
+            <Item key={label} label={t(label)} href={href} />
           )}
         </ul>
 
@@ -124,15 +128,16 @@ export default function Header() {
 }
 
 const Item = ({ label, href }: { label: string; href: string }) => {
+  const locale = useLocale();
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive = (pathname.split(`/${locale}`)[1] || '/') === href;
 
   return (
     <li className="relative group cursor-pointer uppercase tracking-widest">
-      <a>
+      <Link href={href}>
         {label.split('')
           .map((char, i) =>
-            <span key={char}
+            <span key={i}
               className={clsx(
                 isActive
                   ? "text-primary"
@@ -143,22 +148,23 @@ const Item = ({ label, href }: { label: string; href: string }) => {
               {char}
             </span>
           )}
-      </a>
+      </Link>
       {isActive && <div className="bg-primary h-1 w-full" />}
     </li>
   )
 }
 
 const ItemOnMobile = ({ label, href }: { label: string; href: string }) => {
+  const locale = useLocale();
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive = (pathname.split(`/${locale}`)[1] || '/') === href;
 
   return (
     <li className="relative group cursor-pointer uppercase tracking-widest">
-      <a>
+      <Link href={href}>
         {label.split('')
           .map((char, i) =>
-            <span key={char}
+            <span key={i}
               className={clsx(
                 isActive
                   ? "text-white tracking-[0.3em]"
@@ -169,7 +175,7 @@ const ItemOnMobile = ({ label, href }: { label: string; href: string }) => {
               {char}
             </span>
           )}
-      </a>
+      </Link>
     </li>
   )
 }

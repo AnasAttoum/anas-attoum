@@ -1,5 +1,6 @@
+import { paths } from "@/lib/paths";
+
 export const navItems = [
-    { label: "item 1", href: "/" },
-    { label: "item 2", href: "/2" },
-    { label: "item 3", href: "/3" },
+    { label: "home", href: "/" },
+    { label: "projects", href: paths.projects },
 ];

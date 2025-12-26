@@ -1,9 +1,7 @@
 import { SkillFindManyArgs } from "@/app/generated/prisma/models";
+import SkillCard from "@/components/cards/skill-card";
 import LetterAnimation from "@/components/gsap/letter-animation";
-import ToAnimation from "@/components/gsap/to-animation";
-import { skillsHost } from "@/lib/images-hosts";
 import prisma, { prismaConfig } from "@/lib/prisma";
-import Image from "next/image";
 
 export default async function Skills() {
 
@@ -16,18 +14,8 @@ export default async function Skills() {
 
                 <div className="flex justify-center flex-wrap gap-2 sm:gap-3 md:gap-10 max-md:space-y-7">
 
-                    {skills.map(({ id, name, color, image }, i) =>
-                        <ToAnimation key={id} to="none" position={1 + (0.5 * i)}>
-                            <div className="relative flex justify-center items-center w-37 h-37 shadow dark:shadow-black bg-white dark:bg-gray transition-all duration-300 rounded-[50%] hover:rounded-lg group">
-                                <Image src={skillsHost + image} alt={name} width={100} height={100} className="group-hover:-translate-y-12" />
-                                <h4
-                                    className="h4 absolute place-content-center -z-10 opacity-0 group-hover:translate-y-8 group-hover:z-10 group-hover:opacity-100 font-medium"
-                                    style={{ color }}
-                                >
-                                    {name}
-                                </h4>
-                            </div>
-                        </ToAnimation>
+                    {skills.map((skill, index) =>
+                        <SkillCard key={skill.id} skill={skill} index={index} />
                     )}
 
                 </div>

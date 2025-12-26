@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { ThemeProvider } from 'next-themes';
 import { routing } from '@/lib/localization/routing';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Header from '@/layouts/header/header';
+import Footer from '@/layouts/footer/footer';
 
 type Props = {
   children: React.ReactNode;
@@ -43,7 +45,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         defaultTheme="system"
         enableSystem
       >
-        {children}
+        <Header />
+        <div className="x-spacing">
+          {children}
+        </div>
+        <Footer />
       </ThemeProvider>
     </NextIntlClientProvider>
   )
