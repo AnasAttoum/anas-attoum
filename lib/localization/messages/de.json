@@ -23,8 +23,8 @@
   "more-details": "Mehr Details",
   "more-projects": "Weitere Projekte ...",
   "contact-me": "Kontaktiere mich",
-  "lets-connect": "Lass uns verbinden! <br /> und etwas Großartiges zusammen schaffen",
-  "drop-message": "Ich suche derzeit nach neuen Möglichkeiten, sei es in Teilzeit oder Vollzeit. Mein Posteingang ist immer offen.<br /> Schreib mir eine Nachricht!",
+  "lets-connect": "Lass uns verbinden! <br></br> und etwas Großartiges zusammen schaffen",
+  "drop-message": "Ich suche derzeit nach neuen Möglichkeiten, sei es in Teilzeit oder Vollzeit. Mein Posteingang ist immer offen.<br></br> Schreib mir eine Nachricht!",
   "code-with": "Code mit ❤️",
   "name": "Name",
   "email": "Email",
@@ -33,5 +33,9 @@
   "code": "Code",
   "demo": "Demo",
   "overview": "Übersicht",
-  "code-by": "Code mit ❤️ von"
+  "code-by": "Code mit ❤️ von",
+  "toaster": {
+    "success": "Danke! Ihre Nachricht wurde erfolgreich gesendet.",
+    "error": "Hoppla! Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."
+  }
 }

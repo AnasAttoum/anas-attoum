@@ -1,5 +1,6 @@
 import { ProjectFindManyArgs } from "@/app/generated/prisma/models";
 import ProjectCard from "@/components/cards/project-card";
+import LetterAnimation from "@/components/gsap/letter-animation";
 import prisma, { prismaConfig } from "@/lib/prisma";
 
 export default async function Projects() {
@@ -7,7 +8,9 @@ export default async function Projects() {
     const projects = await prisma.project.findMany(prismaConfig as ProjectFindManyArgs);
 
     return (
-        <section>
+        <section className="mt-28!">
+            <LetterAnimation title="projects" />
+            
             <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-10 max-md:space-y-7">
 
                 {projects.map((project, index) => (

@@ -11,27 +11,45 @@
 }
 
 .animated-box {
-  @apply hidden md:flex absolute -top-45 -right-125 w-150 h-150 rounded-lg bg-primary -z-20 ;
-      animation: shape 10s linear infinite alternate;
+  @apply hidden md:flex absolute -top-45 -right-125 w-150 h-150 rounded-lg bg-primary -z-20;
+  animation: shape 10s linear infinite alternate;
 }
 @keyframes shape {
-    from {
-      transform: rotate(60deg);
-    }
-    to {
-      transform: rotate(75deg);
-    }
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(75deg);
+  }
 }
 
 .animated-small-box {
-  @apply hidden md:flex absolute top-0 -right-125 w-100 h-100 rounded-lg bg-secondary -z-20 ;
-      animation: small-shape 60s linear infinite alternate;
+  @apply hidden md:flex absolute top-0 -right-125 w-100 h-100 rounded-lg bg-secondary -z-20;
+  animation: small-shape 60s linear infinite alternate;
 }
 @keyframes small-shape {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+/* --------------------------------- primaryCircle --------------------------------- */
+.primaryCircle {
+  @apply absolute -z-10 h-30 w-30 bg-secondary;
+  border-radius: 30% 70% / 50% 50%;
+
+  animation: circ 5s infinite alternate;
+}
+
+@keyframes circ {
+  from {
+    transform: translateY(50px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
 }

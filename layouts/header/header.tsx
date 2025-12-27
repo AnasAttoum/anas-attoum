@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { usePathname } from 'next/navigation';
 import { navItems } from "../nav-items";
 import Hamb from "@/components/buttons/hamb/hamb";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import dynamic from 'next/dynamic';
 import LocaleSwitcher from "@/components/buttons/locale-switcher/locale-switcher";
@@ -99,7 +99,7 @@ export default function Header() {
               )}
               style={{ transitionDelay: `${0.3 * i}s` }}
             >
-              <ItemOnMobile label={t(label)} href={href} />
+              <ItemOnMobile label={t(label)} href={href} setChecked={setChecked} />
             </div>
           )
         })}
@@ -154,14 +154,14 @@ const Item = ({ label, href }: { label: string; href: string }) => {
   )
 }
 
-const ItemOnMobile = ({ label, href }: { label: string; href: string }) => {
+const ItemOnMobile = ({ label, href, setChecked }: { label: string; href: string; setChecked: Dispatch<SetStateAction<boolean>> }) => {
   const locale = useLocale();
   const pathname = usePathname();
   const isActive = (pathname.split(`/${locale}`)[1] || '/') === href;
 
   return (
     <li className="relative group cursor-pointer uppercase tracking-widest">
-      <Link href={href}>
+      <Link href={href} onClick={() => setChecked(false)}>
         {label.split('')
           .map((char, i) =>
             <span key={i}

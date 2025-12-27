@@ -7,6 +7,7 @@
   --light: #f2e2ff;
 
   --gray: #939393;
+  --dark-gray: #333;
 
   --background: #eee;
   --foreground: #111;
@@ -27,6 +28,7 @@
   --color-secondary: var(--secondary);
   --color-light: var(--light);
   --color-gray: var(--gray);
+  --color-dark-gray: var(--dark-gray);
   --font-raleway: var(--font-raleway);
 }
 
