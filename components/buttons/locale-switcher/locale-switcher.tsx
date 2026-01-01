@@ -41,7 +41,7 @@ export default function LocaleSwitcher() {
 
       <div className={clsx(
         "flex flex-col absolute top-15 bg-gray rounded-md",
-        isOpen ? "opacity-100" : "opacity-0"
+        isOpen ? "visible opacity-100" : "invisible opacity-0"
       )}>
         {localesDetails.map((loc, i) => {
           const isActive = locale === loc.locale

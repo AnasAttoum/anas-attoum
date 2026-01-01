@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { ClassValue } from "clsx";
 import Image from "next/image";
-import Link from "next/link";
 
 const links = [
     { alt: "Anas Attoum’s github", src: "/icons/social/github.svg", href: "https://github.com/AnasAttoum" },
@@ -14,14 +13,20 @@ export default function SocialLinks({ className }: { className?: ClassValue }) {
     return (
         <div className={clsx("flex justify-center items-center mt-15 gap-5", className)}>
             {links.map(({ alt, href, src }) => (
-                <Link key={alt} href={href} className="inline-block simpleBtn bg-light hover:bg-gray! shadow-md">
+                <a
+                    key={alt}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block simpleBtn bg-light hover:bg-gray! shadow-md"
+                >
                     <Image
                         src={src}
                         alt={alt}
                         width={30}
                         height={30}
                     />
-                </Link>
+                </a>
             ))}
         </div>
     )

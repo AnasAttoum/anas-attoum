@@ -53,3 +53,43 @@
     transform: translateY(0px);
   }
 }
+
+/* --------------------------------- rotateLeft & rotateRight --------------------------------- */
+
+.rotateLeft {
+  opacity: 0;
+  animation: moveLeft 3s 1.5s;
+}
+@keyframes moveLeft {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+}
+
+.rotateRight {
+  opacity: 0;
+  animation: moveRight 3s 1.5s;
+}
+@keyframes moveRight {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+}

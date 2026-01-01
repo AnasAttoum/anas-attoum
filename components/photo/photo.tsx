@@ -6,13 +6,20 @@ type Props = {
 
 export default function Photo({ src }: Props) {
     return (
-        <div className="relative m-5">
+        <div
+            tabIndex={0}
+            className="relative m-5 group"
+        >
             <Image
                 src={src}
                 alt="Anas Attoum’s picture"
                 width={330}
                 height={330}
-                className="rounded-3xl border-8 border-secondary hover:scale-105 hover:rotate-3"
+                className="rounded-3xl border-8 border-secondary
+                   group-hover:scale-105
+                   group-focus:scale-105
+                   group-hover:rotate-3
+                   group-focus:rotate-3"
             />
             <span className="second-border" />
         </div>

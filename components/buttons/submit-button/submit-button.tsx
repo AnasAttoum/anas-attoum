@@ -25,7 +25,7 @@ export default function SubmitButton() {
         >
             {t("submit")}
             <Image
-                src="/icons/social/send.svg"
+                src="/icons/more/send.svg"
                 alt="send"
                 width={50}
                 height={50}

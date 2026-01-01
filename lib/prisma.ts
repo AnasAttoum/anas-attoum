@@ -23,3 +23,9 @@ export const prismaConfig = {
   where: { enabled: true },
   orderBy: { order: "desc" },
 };
+
+export const prismaConfigFindProject = (projectName: string) => ({
+  where: {
+    name: { equals: projectName.replaceAll("-", " "), mode: "insensitive" },
+  },
+});
