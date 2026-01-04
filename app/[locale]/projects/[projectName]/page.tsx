@@ -10,6 +10,7 @@ import Square from '@/components/icons/square';
 import { projectsHost } from "@/lib/images-hosts";
 import ToAnimation from "@/components/gsap/to-animation";
 import { localesType } from "@/lib/localization/routing";
+import { bulkChildrenAnimation } from "@/lib/animation";
 
 export default async function Project({ params }: { params: Promise<{ locale: string; projectName: string }> }) {
 
@@ -79,14 +80,14 @@ export default async function Project({ params }: { params: Promise<{ locale: st
             <div className="flex flex-col gap-16">
                 <div className="flex justify-center flex-wrap gap-3 pr-5">
                     {technologies.map((technology, i) =>
-                        <ToAnimation key={technology} to="none" position={1 + (.3 * i)}>
+                        <ToAnimation key={technology} to="none" order={bulkChildrenAnimation(i)}>
                             <h4 className="h4 bg-primary rounded-md px-2 hover:scale-105">{technology}</h4>
                         </ToAnimation>
                     )}
                 </div>
 
                 <div className="grid grid-cols-2 items-stretch gap-16">
-                    <ToAnimation to="bottom" position={.5} className="relative flex items-center col-span-2 md:col-span-1 max-md:h-65">
+                    <ToAnimation to="bottom" className="relative flex items-center col-span-2 md:col-span-1 max-md:h-65">
                         <Image
                             src={projectsHost + logo}
                             alt={name}
@@ -95,7 +96,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         />
                     </ToAnimation>
 
-                    <ToAnimation to="top" position={1} className="col-span-2 md:col-span-1 ">
+                    <ToAnimation to="top" order={2} className="col-span-2 md:col-span-1 ">
                         <h4 className="h4 border-primary border-dashed border-2 px-5 py-10 text-gray" dangerouslySetInnerHTML={{ __html: project?.[`description_${locale as localesType}`] }}></h4>
                     </ToAnimation>
                 </div>

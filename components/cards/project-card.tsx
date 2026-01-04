@@ -5,6 +5,7 @@ import { Link } from "@/lib/localization/navigation";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { paths } from "@/lib/paths";
+import { bulkChildrenAnimation } from "@/lib/animation";
 
 type Props = {
     project: Project;
@@ -17,8 +18,7 @@ export default async function ProjectCard({ project, index }: Props) {
 
     return (
         <ToAnimation className="col-span-2 md:col-span-1" to={index % 2 === 0 ? "bottom" : "top"}
-            position={index % 4 === 0 ? 0 : index % 4 === 1 ? .5 : index % 4 === 2 ? 1 : 1.5}
-            // position={1 + (0.5 * index)}
+            order={bulkChildrenAnimation(index)}
         >
             <div tabIndex={0} className="relative w-full min-h-40 aspect-2/1 rounded-md overflow-hidden group text-white">
                 <Image

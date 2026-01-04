@@ -20,21 +20,21 @@ export default function Intro() {
                     </h1>
                 </ToAnimation>
 
-                <ToAnimation to="top" position={1}>
+                <ToAnimation to="top" order={2}>
                     <h3 className="h3 w-fit">
                         {t("lets-work-together")} <span className="inline-block h-3 w-3 bg-primary rounded-full" />
                         <div className="h-1 w-[50%] bg-primary mt-3" />
                     </h3>
                 </ToAnimation>
 
-                <ToAnimation to="left" position={1.5}>
+                <ToAnimation to="left" order={3}>
                     <a href="https://drive.google.com/file/d/1B4xQ9jc5EQa4NA9YpPLpz-vFqYE62ivw/preview" target="_blank" rel="noreferrer" className="primaryBtn">{t("show-cv")}</a>
                 </ToAnimation>
             </div>
 
             {/* Right */}
             <div className="col-span-3 lg:col-span-1 flex justify-center items-center relative">
-                <ToAnimation to="none" position={2}>
+                <ToAnimation to="none" order={4}>
                     <Photo src="/images/anas-attoum-1.jpg" />
                     <SocialLinks />
                 </ToAnimation>

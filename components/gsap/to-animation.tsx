@@ -5,17 +5,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ClassValue } from "clsx";
 import clsx from "clsx";
+import { animationSpeed } from "@/lib/animation";
 
 type Props = {
     children: ReactNode;
-    position?: number;
+    order?: number;
     to?: "right" | "left" | "top" | "bottom" | "none";
     className?: ClassValue;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ToAnimation({ children, position = .5, to = "right", className }: Props) {
+export default function ToAnimation({ children, order = 1, to = "right", className }: Props) {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -57,11 +58,11 @@ export default function ToAnimation({ children, position = .5, to = "right", cla
                     duration: 0.6,
                     ease: "none",
                 },
-                position
+                animationSpeed + (order - 1) * animationSpeed
             );
         }, ref);
         return () => ctx.revert();
-    }, [position, to]);
+    }, [order, to]);
 
     return <div ref={ref} className={clsx("opacity-0", className)}>{children}</div>;
 }

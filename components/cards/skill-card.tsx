@@ -2,6 +2,7 @@ import Image from "next/image"
 import ToAnimation from "../gsap/to-animation"
 import { skillsHost } from "@/lib/images-hosts"
 import { Skill } from "@/app/generated/prisma/client"
+import { bulkChildrenAnimation } from "@/lib/animation"
 
 type Props = {
     skill: Skill;
@@ -11,7 +12,9 @@ type Props = {
 export default function SkillCard({ skill, index }: Props) {
     const { name, color, image } = skill;
     return (
-        <ToAnimation to="none" position={1 + (0.5 * index)}>
+        <ToAnimation to="none"
+            order={bulkChildrenAnimation(index)}
+        >
             <div tabIndex={0} className="relative flex justify-center items-center w-37 h-37 shadow dark:shadow-black bg-white dark:bg-gray transition-all duration-300 rounded-[50%] hover:rounded-lg focus:rounded-lg group">
                 <Image src={skillsHost + image} alt={name} width={100} height={100} className="group-hover:-translate-y-12 group-focus-within:-translate-y-12" />
                 <h4

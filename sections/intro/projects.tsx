@@ -26,12 +26,12 @@ export default async function Projects() {
             </div>
             <div className="grid grid-cols-3 w-full md:gap-3">
                 <div className="col-span-3 md:col-span-1 max-md:order-2 mt-8 md:mt-16">
-                    <ToAnimation to="bottom" position={.5}>
+                    <ToAnimation to="bottom">
                         <Link href={paths.contact} className="text-lg inline-block w-full py-5 px-10 rounded-lg text-center border border-dark-gray bg-transparent! hover:bg-dark-gray! hover:text-white">{t("contact")}</Link>
                     </ToAnimation>
                 </div>
                 <div className="col-span-3 md:col-span-2 max-md:order-1 mt-8 md:mt-16">
-                    <ToAnimation to="top" position={1}>
+                    <ToAnimation to="top" order={2}>
                         <Link href={paths.projects} className="text-lg text-white inline-block w-full py-5 px-10 rounded-lg text-center hover:bg-primary bg-dark-gray">{t("more-projects")}</Link>
                     </ToAnimation>
                 </div>

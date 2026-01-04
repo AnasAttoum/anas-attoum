@@ -39,7 +39,7 @@ export default function Form() {
   };
 
   return (
-    <ToAnimation to="top" position={1} className="col-span-2 lg:col-span-1">
+    <ToAnimation to="top" order={2} className="col-span-2 lg:col-span-1">
       <form onSubmit={(e) => sendEmail(e, t("toaster.success"), t("toaster.error"))} className="flex flex-col gap-5">
 
         <div>
