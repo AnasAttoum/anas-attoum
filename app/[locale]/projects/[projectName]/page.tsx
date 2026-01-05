@@ -81,7 +81,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                 <div className="flex justify-center flex-wrap gap-3 pr-5">
                     {technologies.map((technology, i) =>
                         <ToAnimation key={technology} to="none" order={bulkChildrenAnimation(i)}>
-                            <h4 className="h4 bg-primary rounded-md px-2 hover:scale-105">{technology}</h4>
+                            <h4 className="h4 bg-primary text-white rounded-md px-2 hover:scale-105">{technology}</h4>
                         </ToAnimation>
                     )}
                 </div>

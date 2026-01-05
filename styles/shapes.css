@@ -38,7 +38,7 @@
 
 /* --------------------------------- primaryCircle --------------------------------- */
 .primaryCircle {
-  @apply absolute -z-10 h-30 w-30 bg-secondary;
+  @apply absolute -z-10 h-24 w-24 md:h-30 md:w-30 bg-secondary;
   border-radius: 30% 70% / 50% 50%;
 
   animation: circ 5s infinite alternate;
@@ -46,11 +46,11 @@
 
 @keyframes circ {
   from {
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
 
   to {
-    transform: translateY(0px);
+    transform: translateY(-30px);
   }
 }
 
