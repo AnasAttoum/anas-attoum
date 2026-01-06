@@ -2,7 +2,7 @@ import LetterAnimation from "@/components/gsap/letter-animation";
 import ToAnimation from "@/components/gsap/to-animation";
 import SocialLinks from "@/components/social-links/social-links";
 import { getTranslations } from "next-intl/server"
-import Form from "./form";
+import Form from "./form/form";
 
 export default async function Contact() {
 

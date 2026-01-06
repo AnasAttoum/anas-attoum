@@ -60,3 +60,7 @@ section {
 .h4 {
   @apply text-lg lg:text-lg xl:text-2xl;
 }
+
+.errorMsg {
+  @apply text-red-500 text-sm mt-1;
+}

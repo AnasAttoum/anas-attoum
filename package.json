@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@hookform/resolvers": "^5.2.2",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "clsx": "^2.1.1",
@@ -22,7 +23,9 @@
     "nextjs-toast-notify": "^1.57.0",
     "pg": "^8.16.3",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "react-hook-form": "^7.70.0",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

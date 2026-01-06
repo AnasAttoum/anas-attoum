@@ -38,5 +38,9 @@
   "toaster": {
     "success": "Danke! Ihre Nachricht wurde erfolgreich gesendet.",
     "error": "Hoppla! Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."
+  },
+  "validation": {
+    "required": "Erforderlich",
+    "invalid-email": "Ungültige E-Mail-Adresse"
   }
 }
