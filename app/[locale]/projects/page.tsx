@@ -1,23 +1,28 @@
 import { ProjectFindManyArgs } from "@/app/generated/prisma/models";
-import ProjectCard from "@/components/cards/project-card";
 import LetterAnimation from "@/components/gsap/letter-animation";
+import { projectsHost } from "@/lib/images-hosts";
 import prisma, { prismaConfig } from "@/lib/prisma";
+import AllProjects from "@/sections/all-projects";
 
-export default async function Projects() {
+export const revalidate = 60;
+
+export default async function Projects({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
+
+    const search = await searchParams;
+    const { type } = search;
 
     const projects = await prisma.project.findMany(prismaConfig as ProjectFindManyArgs);
+    const types = [...new Set(projects.map(p => p.type))].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
     return (
         <section className="mt-28!">
-            <LetterAnimation title="projects" />
-            
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-10 max-md:space-y-7">
+            <LetterAnimation title="projects" className="mb-0" />
 
-                {projects.map((project, index) => (
-                    <ProjectCard key={project.id} project={project} index={index} />
-                ))}
-
-            </div>
+                <AllProjects
+                    initialProjects={projects.map((el)=>({...el, image:projectsHost+el.image}))}
+                    types={types}
+                    initialType={type}
+                />
         </section>
     )
 }

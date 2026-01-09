@@ -119,3 +119,7 @@
     right: -20px;
   }
 }
+
+.chip {
+  @apply bg-primary text-white rounded-md px-2 hover:scale-105;
+}

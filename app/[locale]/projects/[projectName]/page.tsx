@@ -32,6 +32,8 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                 <LetterAnimation title="overview" className="my-0!" />
                 <Square className="rotateRight" />
             </div>
+
+
             <div className="fixed top-0 right-0 z-20 flex items-center h-full">
                 <div className="flex flex-col justify-center gap-5 max-md:bg-black/5 dark:max-md:bg-white/5 backdrop-blur-xs max-md:shadow-xl dark:max-md:shadow-black rounded-l-md">
                     <Back />
@@ -67,6 +69,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                 </div>
             </div>
 
+            {/* mockup */}
             <ToAnimation to="none" className="relative h-[60vw] md:h-[50vw] lg:h-[30vw]">
                 <Image
                     src={projectsHost + mockup}
@@ -78,14 +81,16 @@ export default async function Project({ params }: { params: Promise<{ locale: st
             </ToAnimation>
 
             <div className="flex flex-col gap-16">
+                {/* technologies */}
                 <div className="flex justify-center flex-wrap gap-3 pr-5">
                     {technologies.map((technology, i) =>
                         <ToAnimation key={technology} to="none" order={bulkChildrenAnimation(i)}>
-                            <h4 className="h4 bg-primary text-white rounded-md px-2 hover:scale-105">{technology}</h4>
+                            <h4 className="h4 chip">{technology}</h4>
                         </ToAnimation>
                     )}
                 </div>
 
+                {/* projects details */}
                 <div className="grid grid-cols-2 items-stretch gap-16">
                     <ToAnimation to="bottom" className="relative flex items-center col-span-2 md:col-span-1 max-md:h-65">
                         <Image
@@ -101,6 +106,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                     </ToAnimation>
                 </div>
 
+                {/* video */}
                 <ToAnimation>
                     <iframe src={video} width="100%" height="480" title={name} allowFullScreen style={{ maxWidth: '100%', height: 'auto', aspectRatio: '480/229' }}></iframe>
                 </ToAnimation>

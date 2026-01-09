@@ -1,20 +1,19 @@
 import { Project } from "@/app/generated/prisma/client"
 import ToAnimation from "../gsap/to-animation";
-import { projectsHost } from "@/lib/images-hosts";
 import { Link } from "@/lib/localization/navigation";
-import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { paths } from "@/lib/paths";
 import { bulkChildrenAnimation } from "@/lib/animation";
+import { useTranslations } from "next-intl";
 
 type Props = {
     project: Project;
     index: number;
 }
 
-export default async function ProjectCard({ project, index }: Props) {
+export default function ProjectCard({ project, index }: Props) {
     const { name, image, technologies } = project;
-    const t = await getTranslations();
+    const t = useTranslations();
 
     return (
         <ToAnimation className="col-span-2 md:col-span-1" to={index % 2 === 0 ? "bottom" : "top"}
@@ -22,7 +21,7 @@ export default async function ProjectCard({ project, index }: Props) {
         >
             <div tabIndex={0} className="relative w-full min-h-40 aspect-2/1 rounded-md overflow-hidden group text-white">
                 <Image
-                    src={projectsHost + image}
+                    src={image}
                     alt={name}
                     fill
                     unoptimized

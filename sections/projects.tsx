@@ -2,6 +2,7 @@ import { ProjectFindManyArgs } from "@/app/generated/prisma/models";
 import ProjectCard from "@/components/cards/project-card";
 import LetterAnimation from "@/components/gsap/letter-animation";
 import ToAnimation from "@/components/gsap/to-animation";
+import { projectsHost } from "@/lib/images-hosts";
 import { Link } from "@/lib/localization/navigation";
 import { paths } from "@/lib/paths";
 import prisma, { prismaConfig } from "@/lib/prisma";
@@ -18,9 +19,11 @@ export default async function Projects() {
 
             <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-10 max-md:space-y-7">
 
-                {projects.map((project, index) => (
-                    <ProjectCard key={project.id} project={project} index={index} />
-                ))}
+                {projects
+                    .map((el) => ({ ...el, image: projectsHost + el.image }))
+                    .map((project, index) => (
+                        <ProjectCard key={project.id} project={project} index={index} />
+                    ))}
 
 
             </div>
