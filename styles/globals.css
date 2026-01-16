@@ -29,6 +29,7 @@
   --color-light: var(--light);
   --color-gray: var(--gray);
   --color-dark-gray: var(--dark-gray);
+  --color-background: var(--background);
   --font-raleway: var(--font-raleway);
 }
 

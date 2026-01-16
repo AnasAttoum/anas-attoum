@@ -1,6 +1,5 @@
 import { type Project } from "@/app/generated/prisma/client";
 import { ProjectFindFirstArgs } from "@/app/generated/prisma/models";
-import Back from "@/components/buttons/back/back";
 import LetterAnimation from "@/components/gsap/letter-animation";
 import prisma, { prismaConfigFindProject } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
@@ -34,9 +33,9 @@ export default async function Project({ params }: { params: Promise<{ locale: st
             </div>
 
 
-            <div className="fixed top-0 right-0 z-20 flex items-center h-full">
-                <div className="flex flex-col justify-center gap-5 max-md:bg-black/5 dark:max-md:bg-white/5 backdrop-blur-xs max-md:shadow-xl dark:max-md:shadow-black rounded-l-md">
-                    <Back />
+            <div className="fixed bottom-0 md:top-0 right-0 z-20 flex items-center max-md:w-full md:h-full">
+                <div className="flex max-md:py-4 max-md:w-full flex-row-reverse md:flex-col justify-evenly md:justify-center gap-5 dark:shadow-black bg-background backdrop-blur-xs max-md:shadow-xl dark:max-md:shadow-black">
+                    {/* <Back /> */}
 
                     {code && <a
                         href={code}
@@ -47,8 +46,8 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         <Image
                             src="/icons/more/code.svg"
                             alt="code"
-                            width={30}
-                            height={30}
+                            width={20}
+                            height={20}
                         />
                         {t("code")}
                     </a>}
@@ -61,8 +60,8 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         <Image
                             src="/icons/more/demo.svg"
                             alt="demo"
-                            width={30}
-                            height={30}
+                            width={20}
+                            height={20}
                         />
                         {t("demo")}
                     </a>}

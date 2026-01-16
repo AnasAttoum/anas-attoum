@@ -13,8 +13,8 @@ export default function Back() {
             <Image
                 src="/icons/more/back.svg"
                 alt="back"
-                width={30}
-                height={30}
+                width={20}
+                height={20}
             />
             {t("back")}
         </button>

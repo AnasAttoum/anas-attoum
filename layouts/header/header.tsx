@@ -97,7 +97,7 @@ export default function Header() {
                     ? "left-full"
                     : "-left-full"
               )}
-              style={{ transitionDelay: `${0.3 * i}s` }}
+              style={{ transitionDelay: `${0.2 * i}s` }}
             >
               <ItemOnMobile label={t(label)} href={href} setChecked={setChecked} />
             </div>
