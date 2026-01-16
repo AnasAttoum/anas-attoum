@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 10%;
+  width: 5%;
   height: 100%;
 }
 
@@ -119,8 +119,8 @@
   }
 }
 
-@media (max-width: 555px) {
+@media (max-width: 640px) {
   .containerLogo {
-    left: 30px;
+    width: 10%;
   }
 }
