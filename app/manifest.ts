@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Personal developer portfolio showcasing projects, skills, and experience built with Next.js, TypeScript, and Tailwind CSS.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
+    background_color: "#d1bff1",
     theme_color: "#a886e4",
     icons: [
       {

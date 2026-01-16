@@ -121,5 +121,5 @@
 }
 
 .chip {
-  @apply bg-primary text-white rounded-md px-2 hover:scale-105;
+  @apply bg-primary text-white rounded-md px-2 hover:scale-105 active:scale-105;
 }

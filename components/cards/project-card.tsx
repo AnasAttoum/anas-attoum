@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: Props) {
         <ToAnimation className="col-span-2 md:col-span-1" to={index % 2 === 0 ? "bottom" : "top"}
             order={bulkChildrenAnimation(index)}
         >
-            <div tabIndex={0} className="relative w-full min-h-40 aspect-2/1 rounded-md overflow-hidden group text-white">
+            <div tabIndex={0} className="relative w-full min-h-40 aspect-2/1 rounded-md overflow-hidden group text-white shadow-lg dark:shadow-black">
                 <Image
                     src={image}
                     alt={name}

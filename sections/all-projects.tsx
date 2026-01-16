@@ -40,7 +40,7 @@ export default function AllProjects({
     return (
         <>
             {/* filters */}
-            <div className="flex flex-wrap justify-center gap-5 my-10">
+            <div className="flex flex-wrap justify-center gap-5 mt-10 my-16">
                 <FilterChip
                     active={!currentType}
                     label="all"
