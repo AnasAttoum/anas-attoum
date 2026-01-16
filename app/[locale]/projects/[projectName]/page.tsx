@@ -10,6 +10,8 @@ import { projectsHost } from "@/lib/images-hosts";
 import ToAnimation from "@/components/gsap/to-animation";
 import { localesType } from "@/lib/localization/routing";
 import { bulkChildrenAnimation } from "@/lib/animation";
+import { Link } from "@/lib/localization/navigation";
+import { paths } from "@/lib/paths";
 
 export default async function Project({ params }: { params: Promise<{ locale: string; projectName: string }> }) {
 
@@ -33,15 +35,28 @@ export default async function Project({ params }: { params: Promise<{ locale: st
             </div>
 
 
-            <div className="fixed bottom-0 md:top-0 right-0 z-20 flex items-center max-md:w-full md:h-full">
+            <div className="fixed bottom-0 md:top-0 right-0 z-20 flex items-center max-md:w-full md:h-full md:pr-2">
                 <div className="flex max-md:py-4 max-md:w-full flex-row-reverse md:flex-col justify-evenly md:justify-center gap-5 dark:shadow-black bg-background backdrop-blur-xs max-md:shadow-xl dark:max-md:shadow-black">
                     {/* <Back /> */}
+
+                    <Link
+                        href={paths.projects}
+                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
+                    >
+                        <Image
+                            src="/icons/more/app-dots.svg"
+                            alt="code"
+                            width={20}
+                            height={20}
+                        />
+                        {t("other")}
+                    </Link>
 
                     {code && <a
                         href={code}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-none!"
+                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
                     >
                         <Image
                             src="/icons/more/code.svg"
@@ -55,7 +70,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         href={demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-none!"
+                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
                     >
                         <Image
                             src="/icons/more/demo.svg"
