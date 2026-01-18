@@ -1,10 +1,7 @@
 import Header from '@/layouts/header/header';
 import { paths } from '@/lib/paths';
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
-
-export const metadata: Metadata = { title: "404" };
 
 export default async function Page() {
     const t = await getTranslations();
