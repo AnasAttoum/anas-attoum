@@ -9,7 +9,7 @@ export default function Back() {
     const t = useTranslations();
 
     return (
-        <button onClick={() => router.back()} className="simpleBtn flex flex-col items-center gap-1 font-semibold text-primary hover:text-secondary rounded-none!">
+        <button onClick={() => router.back()} className="simpleBtnFocus flex flex-col items-center gap-1 font-semibold text-primary hover:text-secondary rounded-none!">
             <Image
                 src="/icons/more/back.svg"
                 alt="back"

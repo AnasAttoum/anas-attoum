@@ -36,6 +36,9 @@
   "other": "Andere",
   "overview": "Übersicht",
   "code-by": "Code mit ❤️ von",
+  "page-not-found": "Seite nicht gefunden",
+  "oops": "Ups! Die Seite, die du suchst, existiert nicht oder wurde verschoben. Lass uns dich zurück auf den richtigen Weg bringen.",
+  "go-to-homepage": "Zur Startseite",
   "toaster": {
     "success": "Danke! Ihre Nachricht wurde erfolgreich gesendet.",
     "error": "Hoppla! Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."

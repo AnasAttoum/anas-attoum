@@ -3,9 +3,6 @@ import { notFound } from 'next/navigation';
 import { ThemeProvider } from 'next-themes';
 import { routing } from '@/lib/localization/routing';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Header from '@/layouts/header/header';
-import Footer from '@/layouts/footer/footer';
-import ScrollToTop from '@/lib/scroll-to-top';
 
 type Props = {
   children: React.ReactNode;
@@ -45,12 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         defaultTheme="system"
         enableSystem
       >
-        <ScrollToTop />
-        <Header />
-        <div className="x-spacing">
-          {children}
-        </div>
-        <Footer />
+        {children}
       </ThemeProvider>
     </NextIntlClientProvider>
   )

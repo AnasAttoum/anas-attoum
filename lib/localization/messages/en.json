@@ -36,6 +36,9 @@
   "other": "Other",
   "overview": "Overview",
   "code-by": "Code with ❤️ by",
+  "page-not-found": "Page not found",
+  "oops": "Oops! The page you're looking for doesn't exist or has moved. Let us get you back on the right track.",
+  "go-to-homepage": "Go to homepage",
   "toaster": {
     "success": "Thank you! Your message has been sent successfully.",
     "error": "Oops! Something went wrong. Please try again later."

@@ -30,7 +30,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div className="relative overflow-visible" onBlur={() => setIsOpen(false)}>
-      <button className="simpleBtn" onClick={() => setIsOpen((prev) => !prev)}>
+      <button className="simpleBtnFocus" onClick={() => setIsOpen((prev) => !prev)}>
         <Image
           src={localeObj?.src}
           alt={localeObj?.label}

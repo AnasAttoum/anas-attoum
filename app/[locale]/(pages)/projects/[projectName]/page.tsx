@@ -41,7 +41,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
 
                     <Link
                         href={paths.projects}
-                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
+                        className="flex flex-col simpleBtnFocus items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
                     >
                         <Image
                             src="/icons/more/app-dots.svg"
@@ -56,7 +56,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         href={code}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
+                        className="flex flex-col simpleBtnFocus items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
                     >
                         <Image
                             src="/icons/more/code.svg"
@@ -70,7 +70,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                         href={demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col simpleBtn items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
+                        className="flex flex-col simpleBtnFocus items-center gap-1 font-semibold text-primary hover:text-secondary rounded-lg!"
                     >
                         <Image
                             src="/icons/more/demo.svg"

@@ -12,7 +12,7 @@ export default function Hamb({ checked, setChecked }: { setChecked: Dispatch<Set
                 checked={checked}
                 onChange={(e) => setChecked(e.target.checked)}
             />
-            <label htmlFor="hamb" className={clsx(styles.toggle, "simpleBtn md:hidden!")}>
+            <label htmlFor="hamb" className={clsx(styles.toggle, "simpleBtnFocus md:hidden!")}>
                 <div className={styles.bars} id={styles.bar1}></div>
                 <div className={styles.bars} id={styles.bar2}></div>
                 <div className={styles.bars} id={styles.bar3}></div>

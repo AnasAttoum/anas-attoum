@@ -5,6 +5,7 @@
   --primary: #a886e4;
   --secondary: #d1bff1;
   --light: #f2e2ff;
+  --dark: #a855f7;
 
   --gray: #939393;
   --dark-gray: #333;
@@ -27,6 +28,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-light: var(--light);
+  --color-dark: var(--dark);
   --color-gray: var(--gray);
   --color-dark-gray: var(--dark-gray);
   --color-background: var(--background);

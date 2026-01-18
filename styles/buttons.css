@@ -1,6 +1,9 @@
 @import "./globals.css";
 
 .simpleBtn {
+  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800;
+}
+.simpleBtnFocus {
   @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800 focus:bg-gray-200 dark:focus:bg-neutral-800;
 }
 
@@ -120,6 +123,17 @@
   }
 }
 
+/* --------------------------------- secondaryBtn --------------------------------- */
+.secondaryBtn {
+  @apply text-lg text-white inline-block w-full py-5 px-10 rounded-lg text-center hover:bg-primary focus:bg-primary bg-dark-gray;
+}
+
+/* --------------------------------- basicBtn --------------------------------- */
+.basicBtn {
+  @apply text-lg inline-block w-full py-5 px-10 rounded-lg text-center border border-dark-gray bg-transparent! hover:bg-dark-gray! hover:text-white focus:bg-dark-gray! focus:text-white;
+}
+
+/* --------------------------------- chip --------------------------------- */
 .chip {
   @apply bg-primary text-white rounded-md px-2 hover:scale-105 focus:scale-105;
 }
