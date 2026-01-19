@@ -1,6 +1,7 @@
 import ToAnimation from "@/components/gsap/to-animation";
 import Photo from "@/components/photo/photo";
 import SocialLinks from "@/components/social-links/social-links";
+import { AnasAttoum1 } from "@/lib/images-hosts";
 import { useTranslations } from "next-intl";
 
 export default function Intro() {
@@ -35,7 +36,7 @@ export default function Intro() {
             {/* Right */}
             <div className="col-span-3 lg:col-span-1 flex justify-center items-center relative">
                 <ToAnimation to="none" order={4}>
-                    <Photo src="/images/anas-attoum-1.jpg" />
+                    <Photo src={AnasAttoum1!} />
                     <SocialLinks />
                 </ToAnimation>
                 <div className="animated-box" />

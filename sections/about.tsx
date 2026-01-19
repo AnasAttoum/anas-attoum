@@ -1,6 +1,7 @@
 import LetterAnimation from "@/components/gsap/letter-animation";
 import ToAnimation from "@/components/gsap/to-animation";
 import Photo from "@/components/photo/photo";
+import { AnasAttoum2 } from "@/lib/images-hosts";
 import { useTranslations } from "next-intl";
 
 export default function About() {
@@ -14,7 +15,7 @@ export default function About() {
                 {/* Left */}
                 <div className="col-span-3 lg:col-span-1 flex justify-center items-center relative max-lg:order-2">
                     <ToAnimation to="none" order={2}>
-                        <Photo src="/images/anas-attoum-2.jpg" />
+                        <Photo src={AnasAttoum2!} />
                     </ToAnimation>
                     {/* <div className="animated-small-box" /> */}
                 </div>
