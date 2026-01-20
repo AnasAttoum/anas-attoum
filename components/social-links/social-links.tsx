@@ -18,7 +18,7 @@ export default function SocialLinks({ className }: { className?: ClassValue }) {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block simpleBtnFocus bg-light hover:bg-gray! shadow-md"
+                    className="inline-block simpleBtnFocus bg-light hover:bg-gray! shadow-md transition"
                 >
                     <Image
                         src={src}

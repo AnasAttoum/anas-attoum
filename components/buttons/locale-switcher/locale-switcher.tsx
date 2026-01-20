@@ -40,7 +40,7 @@ export default function LocaleSwitcher() {
       </button>
 
       <div className={clsx(
-        "flex flex-col absolute top-15 bg-gray text-white rounded-md",
+        "flex flex-col absolute top-15 bg-gray text-white rounded-md transition",
         isOpen ? "visible opacity-100" : "invisible opacity-0"
       )}>
         {localesDetails.map((loc, i) => {

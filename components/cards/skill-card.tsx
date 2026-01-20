@@ -15,10 +15,10 @@ export default function SkillCard({ skill, index }: Props) {
         <ToAnimation to="none"
             order={bulkChildrenAnimation(index)}
         >
-            <div tabIndex={0} className="relative flex justify-center items-center w-37 h-37 shadow-lg dark:shadow-black bg-white dark:bg-gray transition-all duration-300 rounded-[50%] hover:rounded-lg focus:rounded-lg group">
-                <Image src={skillsHost + image} alt={name} width={100} height={100} className="group-hover:-translate-y-12 group-focus-within:-translate-y-12" />
+            <div tabIndex={0} className="relative flex justify-center items-center transition w-37 h-37 shadow-lg dark:shadow-black bg-white dark:bg-gray rounded-[50%] hover:rounded-lg focus:rounded-lg group">
+                <Image src={skillsHost + image} alt={name} width={100} height={100} className="group-hover:-translate-y-12 group-focus-within:-translate-y-12 transition" />
                 <h4
-                    className="h4 absolute place-content-center -z-10 opacity-0 group-hover:translate-y-8 group-focus-within:translate-y-8 group-hover:z-10 group-focus-within:z-10 group-hover:opacity-100 group-focus-within:opacity-100 font-medium"
+                    className="h4 absolute place-content-center -z-10 opacity-0 group-hover:translate-y-8 group-focus-within:translate-y-8 group-hover:z-10 group-focus-within:z-10 group-hover:opacity-100 group-focus-within:opacity-100 font-medium transition"
                     style={{ color }}
                 >
                     {name}

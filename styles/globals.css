@@ -21,7 +21,6 @@
 
 * {
   scroll-behavior: smooth;
-  transition: all 0.5s;
 }
 
 @theme inline {
@@ -41,6 +40,7 @@ body {
   user-select: none;
   box-sizing: border-box;
   font-family: Raleway;
+  transition: all 0.5s;
 }
 
 section {
@@ -66,4 +66,8 @@ section {
 
 .errorMsg {
   @apply text-red-500 text-sm mt-1;
+}
+
+.transition{
+  @apply transition-all duration-400;
 }

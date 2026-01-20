@@ -1,10 +1,10 @@
 @import "./globals.css";
 
 .simpleBtn {
-  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800;
+  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800 transition;
 }
 .simpleBtnFocus {
-  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800 focus:bg-gray-200 dark:focus:bg-neutral-800;
+  @apply rounded-full p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-neutral-800 focus:bg-gray-200 dark:focus:bg-neutral-800 transition;
 }
 
 /* --------------------------------- primaryBtn --------------------------------- */
@@ -125,12 +125,12 @@
 
 /* --------------------------------- secondaryBtn --------------------------------- */
 .secondaryBtn {
-  @apply text-lg text-white inline-block w-full py-5 px-10 rounded-lg text-center hover:bg-primary focus:bg-primary bg-dark-gray;
+  @apply text-lg text-white inline-block w-full py-5 px-10 rounded-lg text-center hover:bg-primary focus:bg-primary bg-dark-gray transition-all duration-500;
 }
 
 /* --------------------------------- basicBtn --------------------------------- */
 .basicBtn {
-  @apply text-lg inline-block w-full py-5 px-10 rounded-lg text-center border border-dark-gray bg-transparent! hover:bg-dark-gray! hover:text-white focus:bg-dark-gray! focus:text-white;
+  @apply text-lg inline-block w-full py-5 px-10 rounded-lg text-center border border-dark-gray bg-transparent! hover:bg-dark-gray! hover:text-white focus:bg-dark-gray! focus:text-white transition-all duration-500;
 }
 
 /* --------------------------------- chip --------------------------------- */
