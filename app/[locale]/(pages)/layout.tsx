@@ -12,7 +12,7 @@ export default async function Layout({ children }: Props) {
     <>
       <ScrollToTop />
       <Header />
-      <div className="x-spacing">
+      <div className="x-spacing" style={{ minHeight: "calc(100dvh - 5rem)" }}>
         {children}
       </div>
       <Footer />

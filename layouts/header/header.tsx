@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* navItems on Mobile */}
       <ul className={clsx(
-        "absolute top-20 left-0 flex flex-col justify-center text-center text-2xl text-white font-bold gap-7 md:hidden w-full h-0 bg-gray/70 backdrop-blur-sm ease-out opacity-0 x-spacing overflow-hidden",
+        "absolute top-20 left-0 flex flex-col justify-center text-center text-2xl text-white font-bold gap-7 md:hidden w-full h-0 bg-gray/70 backdrop-blur-sm ease-out opacity-0 x-spacing overflow-hidden transition",
         checked && "h-[calc(100dvh-80px)] opacity-100"
       )}
       >
@@ -90,7 +90,7 @@ export default function Header() {
           return (
             <div key={label}
               className={clsx(
-                "relative transition-all",
+                "relative transition",
                 checked
                   ? "left-0"
                   : even

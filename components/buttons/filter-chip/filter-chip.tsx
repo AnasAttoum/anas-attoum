@@ -11,7 +11,7 @@ export default function FilterChip({ label, active, onClick }: Props) {
             onClick={onClick}
             className={clsx(
                 "h4 chip cursor-pointer transition-all duration-100",
-                !active && "bg-gray!"
+                active ? "scale-105" : "bg-gray!"
             )}
         >
             {t(label)}

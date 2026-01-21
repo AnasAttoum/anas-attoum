@@ -36,7 +36,7 @@ export default function LetterAnimation({ title, className, withoutTranslate = f
 
             tl.fromTo(
                 ref.current,
-                { letterSpacing: "20px", opacity: 0, immediateRender: false },
+                { letterSpacing: "0.7vw", opacity: 0, immediateRender: false },
                 {
                     letterSpacing: 0,
                     opacity: 1,
