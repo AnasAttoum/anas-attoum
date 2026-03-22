@@ -17,7 +17,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
 
     const { locale, projectName } = await params;
     const project: Project | null = await prisma.project.findFirst(prismaConfigFindProject(projectName) as ProjectFindFirstArgs);
-    if (!project) notFound()
+    if (!project || !project.enabled) notFound()
 
     const t = await getTranslations();
 
