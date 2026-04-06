@@ -50,8 +50,7 @@ export default function useFormLogic() {
 
             reset();
             toasterSuccess(t("toaster.success"));
-        } catch (error) {
-            console.error("error: ", error);
+        } catch {
             toasterError(t("toaster.error"));
         }
     }

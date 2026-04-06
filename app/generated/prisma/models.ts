@@ -10,4 +10,6 @@
  */
 export type * from './models/Skill'
 export type * from './models/Project'
+export type * from './models/Information'
+export type * from './models/SocialMedia'
 export type * from './commonInputTypes'

@@ -1,10 +1,18 @@
 import { ProjectFindManyArgs } from "@/app/generated/prisma/models";
 import LetterAnimation from "@/components/gsap/letter-animation";
-import { projectsHost } from "@/lib/images-hosts";
+import { ENV } from "@/lib/env";
 import prisma, { prismaConfig } from "@/lib/prisma";
 import AllProjects from "@/sections/all-projects";
+import { getTranslations } from "next-intl/server";
 
 export const revalidate = 60;
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+  return {
+    title: t("projects"),
+  };
+}
 
 export default async function Projects({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
 
@@ -18,11 +26,11 @@ export default async function Projects({ searchParams }: { searchParams: Promise
         <section className="mt-28!">
             <LetterAnimation title="projects" className="mb-0" />
 
-                <AllProjects
-                    initialProjects={projects.map((el)=>({...el, image:projectsHost+el.image}))}
-                    types={types}
-                    initialType={type}
-                />
+            <AllProjects
+                initialProjects={projects.map((el) => ({ ...el, image: ENV.projectsHost + el.image }))}
+                types={types}
+                initialType={type}
+            />
         </section>
     )
 }

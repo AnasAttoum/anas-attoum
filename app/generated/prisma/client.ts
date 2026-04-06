@@ -49,3 +49,13 @@ export type Skill = Prisma.SkillModel
  * 
  */
 export type Project = Prisma.ProjectModel
+/**
+ * Model Information
+ * 
+ */
+export type Information = Prisma.InformationModel
+/**
+ * Model SocialMedia
+ * 
+ */
+export type SocialMedia = Prisma.SocialMediaModel

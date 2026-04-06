@@ -25,20 +25,20 @@ export default function SubmitButton({ loading = false, ...props }: Props) {
                         setHovered(null)
                 }, 350)
             }}
-            className="relative w-full text-white bg-dark-gray hover:bg-primary focus:bg-primary rounded-md py-5 cursor-pointer overflow-hidden group"
+            className="relative w-full text-white bg-primary hover:bg-dark-gray focus:bg-dark-gray rounded-md py-5 cursor-pointer overflow-hidden group"
             {...props}
         >
             {loading
                 ?
-                    <div className="py-3">
-                        <Image
+                <div className="py-3">
+                    <Image
                         src="/icons/more/three-dots-loading.svg"
                         alt="..."
                         width={50}
                         height={50}
                         className="absolute top-0 w-full h-16"
                     />
-                    </div>
+                </div>
                 :
                 <>
                     {t("submit")}

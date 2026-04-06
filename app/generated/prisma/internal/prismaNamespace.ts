@@ -385,7 +385,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   Skill: 'Skill',
-  Project: 'Project'
+  Project: 'Project',
+  Information: 'Information',
+  SocialMedia: 'SocialMedia'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +403,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "skill" | "project"
+    modelProps: "skill" | "project" | "information" | "socialMedia"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -553,6 +555,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Information: {
+      payload: Prisma.$InformationPayload<ExtArgs>
+      fields: Prisma.InformationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.InformationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.InformationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        findFirst: {
+          args: Prisma.InformationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.InformationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        findMany: {
+          args: Prisma.InformationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        create: {
+          args: Prisma.InformationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        createMany: {
+          args: Prisma.InformationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.InformationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        delete: {
+          args: Prisma.InformationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        update: {
+          args: Prisma.InformationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        deleteMany: {
+          args: Prisma.InformationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.InformationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.InformationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>[]
+        }
+        upsert: {
+          args: Prisma.InformationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InformationPayload>
+        }
+        aggregate: {
+          args: Prisma.InformationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInformation>
+        }
+        groupBy: {
+          args: Prisma.InformationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InformationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.InformationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InformationCountAggregateOutputType> | number
+        }
+      }
+    }
+    SocialMedia: {
+      payload: Prisma.$SocialMediaPayload<ExtArgs>
+      fields: Prisma.SocialMediaFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SocialMediaFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SocialMediaFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        findFirst: {
+          args: Prisma.SocialMediaFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SocialMediaFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        findMany: {
+          args: Prisma.SocialMediaFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>[]
+        }
+        create: {
+          args: Prisma.SocialMediaCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        createMany: {
+          args: Prisma.SocialMediaCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SocialMediaCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>[]
+        }
+        delete: {
+          args: Prisma.SocialMediaDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        update: {
+          args: Prisma.SocialMediaUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        deleteMany: {
+          args: Prisma.SocialMediaDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SocialMediaUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SocialMediaUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>[]
+        }
+        upsert: {
+          args: Prisma.SocialMediaUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialMediaPayload>
+        }
+        aggregate: {
+          args: Prisma.SocialMediaAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSocialMedia>
+        }
+        groupBy: {
+          args: Prisma.SocialMediaGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SocialMediaGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SocialMediaCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SocialMediaCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -624,6 +774,41 @@ export const ProjectScalarFieldEnum = {
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
+
+
+export const InformationScalarFieldEnum = {
+  id: 'id',
+  title_de: 'title_de',
+  title_en: 'title_en',
+  subTitle_de: 'subTitle_de',
+  subTitle_en: 'subTitle_en',
+  about_de: 'about_de',
+  about_en: 'about_en',
+  anas_attoum_1: 'anas_attoum_1',
+  anas_attoum_2: 'anas_attoum_2',
+  cv_de: 'cv_de',
+  cv_en: 'cv_en',
+  contact_title_de: 'contact_title_de',
+  contact_title_en: 'contact_title_en',
+  contact_subTitle_de: 'contact_subTitle_de',
+  contact_subTitle_en: 'contact_subTitle_en',
+  createdAt: 'createdAt'
+} as const
+
+export type InformationScalarFieldEnum = (typeof InformationScalarFieldEnum)[keyof typeof InformationScalarFieldEnum]
+
+
+export const SocialMediaScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  alt: 'alt',
+  image: 'image',
+  href: 'href',
+  enabled: 'enabled',
+  createdAt: 'createdAt'
+} as const
+
+export type SocialMediaScalarFieldEnum = (typeof SocialMediaScalarFieldEnum)[keyof typeof SocialMediaScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -821,6 +1006,8 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   skill?: Prisma.SkillOmit
   project?: Prisma.ProjectOmit
+  information?: Prisma.InformationOmit
+  socialMedia?: Prisma.SocialMediaOmit
 }
 
 /* Types for Logging */

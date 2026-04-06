@@ -52,7 +52,9 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Skill: 'Skill',
-  Project: 'Project'
+  Project: 'Project',
+  Information: 'Information',
+  SocialMedia: 'SocialMedia'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -103,6 +105,41 @@ export const ProjectScalarFieldEnum = {
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
+
+
+export const InformationScalarFieldEnum = {
+  id: 'id',
+  title_de: 'title_de',
+  title_en: 'title_en',
+  subTitle_de: 'subTitle_de',
+  subTitle_en: 'subTitle_en',
+  about_de: 'about_de',
+  about_en: 'about_en',
+  anas_attoum_1: 'anas_attoum_1',
+  anas_attoum_2: 'anas_attoum_2',
+  cv_de: 'cv_de',
+  cv_en: 'cv_en',
+  contact_title_de: 'contact_title_de',
+  contact_title_en: 'contact_title_en',
+  contact_subTitle_de: 'contact_subTitle_de',
+  contact_subTitle_en: 'contact_subTitle_en',
+  createdAt: 'createdAt'
+} as const
+
+export type InformationScalarFieldEnum = (typeof InformationScalarFieldEnum)[keyof typeof InformationScalarFieldEnum]
+
+
+export const SocialMediaScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  alt: 'alt',
+  image: 'image',
+  href: 'href',
+  enabled: 'enabled',
+  createdAt: 'createdAt'
+} as const
+
+export type SocialMediaScalarFieldEnum = (typeof SocialMediaScalarFieldEnum)[keyof typeof SocialMediaScalarFieldEnum]
 
 
 export const SortOrder = {

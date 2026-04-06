@@ -6,12 +6,12 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Square from '@/components/icons/square';
-import { projectsHost } from "@/lib/images-hosts";
 import ToAnimation from "@/components/gsap/to-animation";
 import { localesType } from "@/lib/localization/routing";
 import { bulkChildrenAnimation } from "@/lib/animation";
 import { Link } from "@/lib/localization/navigation";
 import { paths } from "@/lib/paths";
+import { ENV } from "@/lib/env";
 
 export default async function Project({ params }: { params: Promise<{ locale: string; projectName: string }> }) {
 
@@ -86,7 +86,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
             {/* mockup */}
             <ToAnimation to="none" className="relative h-[60vw] md:h-[50vw] lg:h-[30vw]">
                 <Image
-                    src={projectsHost + mockup}
+                    src={ENV.projectsHost + mockup}
                     alt={name + " mockup"}
                     fill
                     sizes="100vw"
@@ -108,7 +108,7 @@ export default async function Project({ params }: { params: Promise<{ locale: st
                 <div className="grid grid-cols-2 items-stretch gap-16">
                     <ToAnimation to="bottom" className="relative flex items-center col-span-2 md:col-span-1 max-md:h-65">
                         <Image
-                            src={projectsHost + logo}
+                            src={ENV.projectsHost + logo}
                             alt={name}
                             fill
                             className="object-contain"

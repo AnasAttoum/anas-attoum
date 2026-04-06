@@ -1,16 +1,13 @@
-import { ProjectFindManyArgs } from "@/app/generated/prisma/models";
+import { Project } from "@/app/generated/prisma/client";
 import ProjectCard from "@/components/cards/project-card";
 import LetterAnimation from "@/components/gsap/letter-animation";
 import ToAnimation from "@/components/gsap/to-animation";
-import { projectsHost } from "@/lib/images-hosts";
+import { ENV } from "@/lib/env";
 import { Link } from "@/lib/localization/navigation";
 import { paths } from "@/lib/paths";
-import prisma, { prismaConfig } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 
-export default async function Projects() {
-
-    const projects = await prisma.project.findMany({ ...prismaConfig as ProjectFindManyArgs, take: 4 });
+export default async function Projects({ projects }: { projects: Project[] }) {
     const t = await getTranslations();
 
     return (
@@ -20,7 +17,7 @@ export default async function Projects() {
             <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-10 max-md:space-y-7">
 
                 {projects
-                    .map((el) => ({ ...el, image: projectsHost + el.image }))
+                    .map((el) => ({ ...el, image: ENV.projectsHost + el.image }))
                     .map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />
                     ))}
