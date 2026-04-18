@@ -5,8 +5,6 @@ import prisma, { prismaConfig } from "@/lib/prisma";
 import AllProjects from "@/sections/all-projects";
 import { getTranslations } from "next-intl/server";
 
-export const revalidate = 60;
-
 export async function generateMetadata() {
   const t = await getTranslations();
   return {
